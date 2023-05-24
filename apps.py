@@ -12,9 +12,10 @@ labelnames=['appreciation', 'surprise','negative','confusion','sadness','fear','
 class bertmodel(torch.nn.Module):
     def __init__(self):
         super().__init__()
-        self.model = RobertaModel.from_pretrained("roberta-base",return_dict=False)
+        self.model = BertModel.from_pretrained("bert-base-uncased",return_dict=False)
+        #self.model=RobertaModel.from_pretrained("roberta-base",return_dict=False)
         self.classifier = torch.nn.Linear(768, 14)
-        self.l2 = torch.nn.Dropout(0.3)
+        self.l2 = torch.nn.Dropout(0.2)
     def forward(self, input_ids, attention_mask, token_type_ids):
         _, features = self.model(input_ids=input_ids, attention_mask=attention_mask, token_type_ids=token_type_ids)
         output = self.classifier(features)
@@ -38,13 +39,13 @@ def Model(text):
             labelcon.append(label)
     return pred,labelcon
 
-MODEL_PATH = 'goemotions1.pth'
+MODEL_PATH = 'goemotionsbert.pth'
 model=bertmodel()
 
 model.load_state_dict(torch.load(MODEL_PATH))
 model=model.to("cuda")
-tokenizer=RobertaTokenizer.from_pretrained("roberta-base")
-
+#tokenizer=RobertaTokenizer.from_pretrained("roberta-base")
+tokenizer=BertTokenizer.from_pretrained("bert-base-uncased")
 app = Flask(__name__)
 
 
@@ -56,6 +57,7 @@ def home():
 @app.route('/predict', methods=['POST'])
 def predict():
     message = request.form.values()
+
     message=str(message)
     prediction,labels = Model(message)
     res = render_template('result.html', prediction=prediction,labels=labels)
