@@ -1,0 +1,5 @@
+web:
+  build: .
+  container_name: apps
+  ports:
+    - "1234:5050"

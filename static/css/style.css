@@ -1,0 +1,91 @@
+body {
+	width: 100%;
+	height:100%;
+	font-family: 'Cambria';
+	background: #fffaf0;
+	color: #fff;
+	font-size: 24px;
+	text-align:center;
+	letter-spacing:1.4px;
+
+}
+.login {
+	position: absolute;
+	top: 40%;
+	left: 50%;
+	margin: -150px 0 0 -150px;
+	width:400px;
+	height:400px;
+}
+
+.login h1 { color: #fff; text-shadow: 0 0 10px rgba(0,0,0,0.3); letter-spacing:1px; text-align:center; }
+
+input {
+	width: 100%;
+	margin-bottom: 10px;
+	background: rgba(0,0,0,0.3);
+	border: none;
+	outline: none;
+	padding: 10px;
+	font-size: 13px;
+	color: #fff;
+	text-shadow: 1px 1px 1px rgba(0,0,0,0.3);
+	border: 1px solid rgba(0,0,0,0.3);
+	border-radius: 4px;
+	box-shadow: inset 0 -5px 45px rgba(100,100,100,0.2), 0 1px 1px rgba(255,255,255,0.2);
+	-webkit-transition: box-shadow .5s ease;
+	-moz-transition: box-shadow .5s ease;
+	-o-transition: box-shadow .5s ease;
+	-ms-transition: box-shadow .5s ease;
+	transition: box-shadow .5s ease;
+}
+
+body{
+	font:15px/1.5 Cambria, Cambria,Cambria;
+	padding: 0;
+	background-color: #f4f3f3;
+}
+
+.container{
+	text-align:center;
+	width:100%;
+	margin: auto;
+	overflow: hidden;
+}
+
+header{
+	background: #03a9f4;
+	border-bottom: #740a39 3px solid;
+	height:120px;
+	width:100%;
+	padding-top:30px;
+
+}
+
+.main-header{
+			text-align:center;
+			background-color: #03a9f4;
+			height:100px;
+			width:100%;
+			margin:0;
+}
+
+.brandname{
+	text-align:center;
+	font-size:30px;
+	color: #161515;
+	margin: 10px;
+}
+
+header h2{
+	text-align:center;
+	color:#fff;
+}
+
+.results{
+	border-radius: 15px 50px;
+    background: #345fe4;
+    padding: 20px;
+    width: 200px;
+    height: 150px;
+}
